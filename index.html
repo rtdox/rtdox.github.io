@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test Zadanie</title>
+    <title>Web-Studio</title>
 
     <link rel="icon" href="favicon.png" type="image/png">
 
@@ -18,79 +18,367 @@
     <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
-    <div id="app">
+    <div id="zakaz">
+    
+
+            
+        <div class="bg-block h-120px"></div>
+
         
-        <div class="container my-5">
+        <div class="my-cont">
+            <div class="row align-items-center py-50px">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="font-size-64 font-weight-bold">WEB STUDIO</h2>
+                    <div class="h-2px my-33px bg-main-color"></div>
+                    <h1 class="font-size-36 font-weight-bold">Адаптивные кросс-браузерные сайты любой сложности</h1>
+                    <h3 class="font-size-22">От сайта-визитки до интернет-магазина или портала!</h3>
+                </div>
 
-            <!-- RULES FIELDS -->
-            <div class="row">
-                <div class="col-md">
-                    <!-- <form action="server.php" method="POST"> -->
-
-                        <div class="alert alert-warning m-0" v-if="!rules.length">No rules...</div>
-
-                        <div class="form-inline mb-2" v-for="(item, index) in rules">
-                            <div class="p-2">{{index+1}}</div>
-
-                            <select name="field" class="form-control mr-2" v-model="item.field">
-                                <option value="0" selected disabled>Field...</option>
-                                <option value="size">Size</option>
-                                <option value="forks">Forks</option>
-                                <option value="stars">Stars</option>
-                                <option value="followers">Followers</option>
-                            </select>
-
-                            <select name="operator" class="form-control mr-2" v-model="item.operator">
-                                <option value="0" selected disabled>Operator...</option>
-                                <option value=">">&gt;</option>
-                                <option value="<">&lt;</option>
-                                <option value="">=</option>
-                            </select>
-
-                            <input type="number" class="form-control mr-2" name="value" value="" v-model="item.value" min="0" placeholder="Value...">
-
-                            <button class="btn btn-danger" @click="DeleteRule(index)">Delete</button>
-                        </div>
-
-                    <!-- </form> -->
+                <div class="col-lg-6 text-center">
+                    <img class="w-100" style="max-width: 560px; max-height: 340px;" src="img/skills.png" alt="skills stack">
                 </div>
             </div>
-
-            <hr>
-
-            <!-- REQUEST SEND BUTTONS -->
-            <div class="row">
-                <div class="col-md-6">
-
-                    <div class="form-inline">
-                        <button class="btn btn-primary mr-2" :disabled="!rules.length" @click="Apply">Apply</button>
-                        <button class="btn btn-warning mr-2" @click="Clear">Clear</button>
-                        
-                        <button class="btn btn-success ml-auto" @click="AddRule">Add Rule</button>
-                    </div>
-
-                </div>
-            </div>
-
-            <hr>
-
-            <!-- RESULTS -->
-            <div class="row">
-                <div class="col-md">
-                    
-                    <div v-for="(item, index) in result">
-                            <a :href="`${item.html_url}`" target="_blank">{{item.name}}</a> | Size: {{item.size}} | Forks: {{item.forks}} | Followers: {{item.watchers}} | Stars: {{item.stargazers_count}}
-                    </div>
-                    
-                </div>
-            </div>
-
-            <!-- END of .container -->
         </div>
 
-        <!-- END of #app -->
+        
+        <div class="bg-block">
+            <div class="my-cont py-100px">
+                <h4 class="font-size-48 font-weight-bold">Наши работы</h4>
+            </div>
+        </div>
+
+        
+        <div class="my-cont py-100px position-relative">
+            <div class="square-decor"></div>
+            <h4 class="font-size-48 font-weight-bold">Цены</h4>
+        </div>
+
+        
+        <div class="bg-block">
+            <div class="my-cont py-100px position-relative">
+                <div class="square-decor"></div>
+                <h4 class="font-size-48 font-weight-bold">Этапы создания сайта</h4>
+            </div>
+        </div>
+
+        
+        <div class="my-cont py-100px position-relative">
+            <div class="square-decor"></div>
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h4 class="font-size-48 font-weight-bold">Оставьте заявку</h4>
+                </div>
+                <div class="col-lg-6">
+                    <h4 class="font-size-48 font-weight-bold">Наши контакты</h4>
+                    <h5>Телефон: +38 099 999 99 99</h5>
+                    <h5>Instagram @rtdox</h5>
+                    <h5>Facebook @artem.daysun</h5>
+                    <h5>Skype: a.daysun</h5>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="app.js"></script>
+
+
+
+<style>
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: #343A40;
+    }
+    ::-webkit-scrollbar-thumb {
+        border: 1px solid #343A40;
+        border-radius: 0;
+        background-color: #494E53;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #00BBFF; 
+    }
+
+    body {
+        background-color: #343A40;
+        color: #00BBFF;
+    }
+
+    .square-decor {
+        position: absolute;
+        right: 0;
+        top: -35px;
+        width: 70px;
+        height: 70px;
+        background-color: #00BBFF;
+        box-shadow: 0 0 15px #373737;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .square-decor:hover {
+        box-shadow: 0 0 15px #00BBFF;
+        transform: rotateZ(-90deg);
+    }
+
+    /* ======= background ======= */
+    .bg-block {
+        background-color: rgba(255,255,255,0.1);
+    }
+    .bg-main-color {
+        background-color: #00BBFF;
+    }
+
+    /* ======= height ======= */
+    .h-120px {
+        height: 120px;
+    }
+    .h-2px {
+        height: 2px !important;
+    }
+
+    /* ======= margin ======= */
+    .my-33px {
+        margin-top: 33px;
+        margin-bottom: 33px;
+    }
+
+    /* ======= padding ======= */
+    .py-50px {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+    .py-100px {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    /* ======= FONT ======= */
+    .font-size-64 {
+        font-size: 64px;
+        white-space: nowrap;
+    }
+    .font-size-36 {
+        font-size: 36px;
+    }
+    .font-size-22 {
+        font-size: 22px;
+    }
+
+    .font-size-48 {
+        font-size: 48px;
+    }
+
+    /* ======= MY CONT ======= */
+    .my-cont {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /* ======= @MEDIA  ======= */
+    @media (min-width: 576px) {
+        .my-cont {
+            max-width: 540px;
+        }
+    }
+    @media (min-width: 768px) {
+        .my-cont {
+            max-width: 720px;
+        }
+    }
+    @media (min-width: 992px) {
+        .my-cont {
+            max-width: 960px;
+        }
+    }
+    @media (min-width: 1200px) {
+        .my-cont {
+            max-width: 1140px;
+        }
+    }
+    @media (min-width: 1600px) {
+        .my-cont {
+            max-width: 1440px;
+        }
+    }
+
+    /* ======= MAX-WIDTH ======= */
+    @media (max-width: 1599px) {
+        .my-33px {
+            margin-top: 30px !important;
+            margin-bottom: 30px !important;
+        }
+
+        .font-size-64 {
+            font-size: 60px !important;
+        }
+        .font-size-36 {
+            font-size: 32px !important;
+        }
+        .font-size-22 {
+            font-size: 20px !important;
+        }
+
+        .font-size-48 {
+            font-size: 42px !important;
+        }
+
+        .py-100px {
+            padding-top: 90px !important;
+            padding-bottom: 90px !important;
+        }
+    }
+    @media (max-width: 1199px) {
+        .my-33px {
+            margin-top: 26px !important;
+            margin-bottom: 26px !important;
+        }
+
+        .font-size-64 {
+            font-size: 58px !important;
+        }
+        .font-size-36 {
+            font-size: 30px !important;
+        }
+        .font-size-22 {
+            font-size: 17px !important;
+        }
+
+        .font-size-48 {
+            font-size: 40px !important;
+        }
+
+        .py-100px {
+            padding-top: 80px !important;
+            padding-bottom: 80px !important;
+        }
+    }
+    @media (max-width: 991px) {
+        .my-33px {
+            margin-top: 22px !important;
+            margin-bottom: 22px !important;
+        }
+
+        .font-size-64 {
+            font-size: 52px !important;
+        }
+        .font-size-36 {
+            font-size: 28px !important;
+        }
+        .font-size-22 {
+            font-size: 17px !important;
+        }
+
+        .font-size-48 {
+            font-size: 36px !important;
+        }
+
+        .py-100px {
+            padding-top: 70px !important;
+            padding-bottom: 70px !important;
+        }
+
+        .h-120px {
+            height: 100px !important;
+        }
+    }
+    @media (max-width: 767px) {
+        .my-33px {
+            margin-top: 18px !important;
+            margin-bottom: 18px !important;
+        }
+
+        .font-size-64 {
+            font-size: 48px !important;
+        }
+        .font-size-36 {
+            font-size: 26px !important;
+        }
+        .font-size-22 {
+            font-size: 17px !important;
+        }
+
+        .font-size-48 {
+            font-size: 30px !important;
+        }
+
+        .py-100px {
+            padding-top: 60px !important;
+            padding-bottom: 60px !important;
+        }
+
+        .h-120px {
+            height: 80px !important;
+        }
+    }
+    @media (max-width: 575px) {
+        .font-size-64 {
+            font-size: 44px !important;
+        }
+        .font-size-36 {
+            font-size: 24px !important;
+        }
+        .font-size-22 {
+            font-size: 17px !important;
+        }
+
+        .font-size-48 {
+            font-size: 26px !important;
+        }
+
+        .py-100px {
+            padding-top: 50px !important;
+            padding-bottom: 50px !important;
+        }
+
+        .h-120px {
+            height: 70px !important;
+        }
+
+        .square-decor {
+            top: -25px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+        }
+    }
+    
+
+    /* ======= OLD STYLE ======= */
+    #shapka {
+        background-image: url('http://localhost/lfp/public/img/zakaz/gray_lines_bg.png');
+        padding: 20px 0;
+    }
+    .img_shapka {
+        height: 100%;
+        width: 100%;
+        max-width: 1190px;
+    }
+</style>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('.hidden_phone').click(function(e) {
+            e.preventDefault();
+            const c = '23';
+            const b = '900';
+            const d = '55';
+            const a = '+38 (093)';
+            let span = a+'ara'+b+'gtg'+c+'gtg'+d;
+            let str = 'telyjy'+span;
+            span = span.replace('ara', ' ').replace('gtg', '-').replace('gtg', '-');
+            str = str.replace('yjy', ':').replace('ara', '').replace('gtg', '').replace('gtg', '').replace(' ', '').replace('(', '').replace(')', '');
+            $(this).attr('href', str);
+            $('#span_for_phone').html(span);
+            $('.hidden_phone').off('click');
+        });
+    });
+</script>
+
 </body>
 </html>
