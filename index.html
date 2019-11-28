@@ -6,19 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Web-Studio</title>
 
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="img/favicon.png" type="image/png">
 
     
 
-    <script src="jquery.js"></script>
-    <script src="bootstrap.js"></script>
-    <script src="vue.js"></script>
-    <script src="axios.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/axios.js"></script>
 
-    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-    <div id="zakaz">
+    <div id="app">
             
         <div class="bg-block h-120px"></div>
 
@@ -62,322 +63,15 @@
         
         <div class="my-cont py-100px position-relative">
             <div class="square-decor"></div>
-            <div class="row">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <h4 class="font-size-48 font-weight-bold">Оставьте заявку</h4>
-                </div>
-                <div class="col-lg-6">
-                    <h4 class="font-size-48 font-weight-bold">Наши контакты</h4>
-                    <h5>Телефон: +38 099 999 99 99</h5>
-                    <h5>Instagram @rtdox</h5>
-                    <h5>Facebook @artem.daysun</h5>
-                    <h5>Skype: a.daysun</h5>
-                </div>
-            </div>
+            <h4 class="font-size-48 font-weight-bold">Наши контакты</h4>
+            <h5>Телефон: +38 099 999 99 99</h5>
+            <h5>Instagram @rtdox</h5>
+            <h5>Facebook @artem.daysun</h5>
+            <h5>Skype: a.daysun</h5>
         </div>
     </div>
 
 
-
-
-<style>
-    ::-webkit-scrollbar {
-        width: 12px;
-        height: 12px;
-    }
-    ::-webkit-scrollbar-track {
-        background-color: #343A40;
-    }
-    ::-webkit-scrollbar-thumb {
-        border: 1px solid #343A40;
-        border-radius: 0;
-        background-color: #494E53;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background-color: #00BBFF; 
-    }
-
-    body {
-        background-color: #343A40;
-        color: #00BBFF;
-    }
-
-    .square-decor {
-        position: absolute;
-        right: 0;
-        top: -35px;
-        width: 70px;
-        height: 70px;
-        background-color: #00BBFF;
-        box-shadow: 0 0 15px #373737;
-        transition: all 0.4s ease-in-out;
-    }
-
-    .square-decor:hover {
-        box-shadow: 0 0 15px #00BBFF;
-        transform: rotateZ(-90deg);
-    }
-
-    /* ======= background ======= */
-    .bg-block {
-        background-color: rgba(255,255,255,0.1);
-    }
-    .bg-main-color {
-        background-color: #00BBFF;
-    }
-
-    /* ======= height ======= */
-    .h-120px {
-        height: 120px;
-    }
-    .h-2px {
-        height: 2px !important;
-    }
-
-    /* ======= margin ======= */
-    .my-33px {
-        margin-top: 33px;
-        margin-bottom: 33px;
-    }
-
-    /* ======= padding ======= */
-    .py-50px {
-        padding-top: 50px !important;
-        padding-bottom: 50px !important;
-    }
-    .py-100px {
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-
-    /* ======= FONT ======= */
-    .font-size-64 {
-        font-size: 64px;
-        white-space: nowrap;
-    }
-    .font-size-36 {
-        font-size: 36px;
-    }
-    .font-size-22 {
-        font-size: 22px;
-    }
-
-    .font-size-48 {
-        font-size: 48px;
-    }
-
-    /* ======= MY CONT ======= */
-    .my-cont {
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    /* ======= @MEDIA  ======= */
-    @media (min-width: 576px) {
-        .my-cont {
-            max-width: 540px;
-        }
-    }
-    @media (min-width: 768px) {
-        .my-cont {
-            max-width: 720px;
-        }
-    }
-    @media (min-width: 992px) {
-        .my-cont {
-            max-width: 960px;
-        }
-    }
-    @media (min-width: 1200px) {
-        .my-cont {
-            max-width: 1140px;
-        }
-    }
-    @media (min-width: 1600px) {
-        .my-cont {
-            max-width: 1440px;
-        }
-    }
-
-    /* ======= MAX-WIDTH ======= */
-    @media (max-width: 1599px) {
-        .my-33px {
-            margin-top: 30px !important;
-            margin-bottom: 30px !important;
-        }
-
-        .font-size-64 {
-            font-size: 60px !important;
-        }
-        .font-size-36 {
-            font-size: 32px !important;
-        }
-        .font-size-22 {
-            font-size: 20px !important;
-        }
-
-        .font-size-48 {
-            font-size: 42px !important;
-        }
-
-        .py-100px {
-            padding-top: 90px !important;
-            padding-bottom: 90px !important;
-        }
-    }
-    @media (max-width: 1199px) {
-        .my-33px {
-            margin-top: 26px !important;
-            margin-bottom: 26px !important;
-        }
-
-        .font-size-64 {
-            font-size: 58px !important;
-        }
-        .font-size-36 {
-            font-size: 30px !important;
-        }
-        .font-size-22 {
-            font-size: 17px !important;
-        }
-
-        .font-size-48 {
-            font-size: 40px !important;
-        }
-
-        .py-100px {
-            padding-top: 80px !important;
-            padding-bottom: 80px !important;
-        }
-    }
-    @media (max-width: 991px) {
-        .my-33px {
-            margin-top: 22px !important;
-            margin-bottom: 22px !important;
-        }
-
-        .font-size-64 {
-            font-size: 52px !important;
-        }
-        .font-size-36 {
-            font-size: 28px !important;
-        }
-        .font-size-22 {
-            font-size: 17px !important;
-        }
-
-        .font-size-48 {
-            font-size: 36px !important;
-        }
-
-        .py-100px {
-            padding-top: 70px !important;
-            padding-bottom: 70px !important;
-        }
-
-        .h-120px {
-            height: 100px !important;
-        }
-    }
-    @media (max-width: 767px) {
-        .my-33px {
-            margin-top: 18px !important;
-            margin-bottom: 18px !important;
-        }
-
-        .font-size-64 {
-            font-size: 48px !important;
-        }
-        .font-size-36 {
-            font-size: 26px !important;
-        }
-        .font-size-22 {
-            font-size: 17px !important;
-        }
-
-        .font-size-48 {
-            font-size: 30px !important;
-        }
-
-        .py-100px {
-            padding-top: 60px !important;
-            padding-bottom: 60px !important;
-        }
-
-        .h-120px {
-            height: 80px !important;
-        }
-    }
-    @media (max-width: 575px) {
-        .font-size-64 {
-            font-size: 44px !important;
-        }
-        .font-size-36 {
-            font-size: 24px !important;
-        }
-        .font-size-22 {
-            font-size: 17px !important;
-        }
-
-        .font-size-48 {
-            font-size: 26px !important;
-        }
-
-        .py-100px {
-            padding-top: 50px !important;
-            padding-bottom: 50px !important;
-        }
-
-        .h-120px {
-            height: 70px !important;
-        }
-
-        .square-decor {
-            top: -25px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-        }
-    }
-    
-
-    /* ======= OLD STYLE ======= */
-    #shapka {
-        background-image: url('img/gray_lines_bg.png');
-        padding: 20px 0;
-    }
-    .img_shapka {
-        height: 100%;
-        width: 100%;
-        max-width: 1190px;
-    }
-</style>
-
-
-
-
-<script>
-    $(document).ready(function () {
-        $('.hidden_phone').click(function(e) {
-            e.preventDefault();
-            const c = '23';
-            const b = '900';
-            const d = '55';
-            const a = '+38 (093)';
-            let span = a+'ara'+b+'gtg'+c+'gtg'+d;
-            let str = 'telyjy'+span;
-            span = span.replace('ara', ' ').replace('gtg', '-').replace('gtg', '-');
-            str = str.replace('yjy', ':').replace('ara', '').replace('gtg', '').replace('gtg', '').replace(' ', '').replace('(', '').replace(')', '');
-            $(this).attr('href', str);
-            $('#span_for_phone').html(span);
-            $('.hidden_phone').off('click');
-        });
-    });
-</script>
-<script src="app.js"></script>
-
+    <script src="js/app.js"></script>
 </body>
 </html>
