@@ -1,13 +1,33 @@
-var app = new Vue({
-    el: '#app',
-    data: {
-        //
+Vue.component('image-block', {
+    data:  {
+        color: '',
+        fontWeight: ''
+    },
+
+    props: ['number'],
+
+    computed: {
+        styling: function() {
+            return {
+                color: 'red',
+                fontWeight: 'bold'
+            }
+        }
     },
 
     methods: {
-        //
-    }
+        getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+    },
+
+    template: '<div class="image_block" :class="\'num\'+number" @click="number=getRandomInt(4)+1" :style="styling">{{number}}</div>'
 });
+
+
+var app = new Vue({el: '#app'});
+
+
 
 $(document).ready(function () {
     $('.hidden_phone').click(function(e) {
