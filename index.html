@@ -12,7 +12,7 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="js/vue.js"></script>
+    <script src="js/vue_dev.js"></script>
     <script src="js/axios.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -51,7 +51,7 @@
                     <button class="btn btn-outline-success rounded-circle">Vue.js</button>
                     <button class="btn btn-outline-primary rounded-circle">WordPress</button>
                 </div>
-                <div style="position: relative;" :style="'min-height:'+(Math.floor(projects.length/4)+(projects.length%4 ? 1 : 0))*200+'px;'">
+                <div id="proj_block" style="position: relative;" :style="'min-height:'+(Math.floor(projects.length/projectsInRow)+(projects.length%projectsInRow ? 1 : 0))*projectDefaultHeight+'px;'">
                     <project-block v-for="(project, index) in projects" :index="index" :obj="project"></project-block>
                 </div>
             </div>
