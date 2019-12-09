@@ -93,8 +93,8 @@ body {
     margin-left: auto;
 }
 
-/* ========image_block======== */
-.image_block {
+/* ========project_block======== */
+.project_block {
     position: absolute;
     display: block;
     min-width: 200px;
@@ -107,19 +107,19 @@ body {
     border: 1px solid #343A40;
     transition: all 1s ease-in-out;
 }
-.image_block.num1 {
+.project_block.num_1 {
     left: 0;
     top: 0;
 }
-.image_block.num2 {
+.project_block.num_2 {
     left: 200px;
     top: 0;
 }
-.image_block.num3 {
+.project_block.num_3 {
     left: 400px;
     top: 0;
 }
-.image_block.num4 {
+.project_block.num_4 {
     left: 600px;
     top: 0;
 }

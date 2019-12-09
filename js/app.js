@@ -1,16 +1,21 @@
-Vue.component('image-block', {
+// ============= 
+Vue.component('project-block', {
     data:  {
         color: '',
-        fontWeight: ''
+        fontWeight: '',
+        width: 200,
+        height: 200,
     },
 
-    props: ['number'],
+    props: ['index','obj'],
 
     computed: {
         styling: function() {
             return {
-                color: 'red',
-                fontWeight: 'bold'
+                color: '#333',
+                fontWeight: 'bold',
+                left: Math.floor(this.index%4)*200+'px',
+                top:  Math.floor(this.index/4)*200+'px'
             }
         }
     },
@@ -21,11 +26,33 @@ Vue.component('image-block', {
         }
     },
 
-    template: '<div class="image_block" :class="\'num\'+number" @click="number=getRandomInt(4)+1" :style="styling">{{number}}</div>'
+    template: '<div class="project_block" :class="\'num\'+parseInt(index+1)" :style="styling">{{this.obj.name}}</div>'
 });
 
 
-var app = new Vue({el: '#app'});
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        projects: [ {"name":"LFP","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
+                    {"name":"Love 3:16","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
+                    {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
+                    {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
+                    {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
+                    {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
+                    {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
+                    {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
+                    {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
+                    {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
+                    {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
+                    {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
+                    {"name":"KEN Academy","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"} ]
+    },
+
+    created: function(){
+        //load projects from file
+    },
+});
 
 
 
