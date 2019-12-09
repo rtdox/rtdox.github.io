@@ -97,15 +97,9 @@ body {
 .project_block {
     position: absolute;
     display: block;
-    /* min-width: 200px;
-    min-height: 200px;
-    max-width: 200px;
-    max-height: 200px;
-    left: 0;
-    top: 0; */
     background-color: #ccc;
     border: 1px solid #343A40;
-    transition: left 0.5s ease-in-out, top 0.5s ease-in-out;
+    transition: top 0.5s ease-in-out, left 0.5s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 /* ======= @MEDIA  ======= */

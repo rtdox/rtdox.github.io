@@ -52,7 +52,7 @@
                     <button class="btn btn-outline-primary rounded-circle">WordPress</button>
                 </div>
                 <div id="proj_block" style="position: relative;" :style="'min-height:'+(Math.floor(projects.length/projectsInRow)+(projects.length%projectsInRow ? 1 : 0))*projectDefaultHeight+'px;'">
-                    <project-block v-for="(project, index) in projects" :index="index" :obj="project"></project-block>
+                    <project-block v-for="(project, index) in projects" :index="index" :obj="project" :key="'key-'+index"></project-block>
                 </div>
             </div>
         </div>
