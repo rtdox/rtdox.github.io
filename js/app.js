@@ -35,7 +35,7 @@ Vue.component('project-block', {
     },
 
     mounted() {
-        setTimeout( () => {this.obj.order = this.index}, getRandomArbitrary(400,400));
+        setTimeout( () => {this.obj.order = this.index}, getRandomArbitrary(400,900));
         //this.obj.order = this.index;
         this.start_color = getRandomColor();
         this.start_bgcolor = getRandomColor();
@@ -148,6 +148,13 @@ var app = new Vue({
                 }
             });
 
+            this.SortBlocks();
+        },
+
+        ShowAll(){
+            this.projects.forEach(item => {
+                item.visible = true;
+            });
             this.SortBlocks();
         }
     }
