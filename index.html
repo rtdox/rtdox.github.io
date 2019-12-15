@@ -45,11 +45,11 @@
             <div class="my-cont py-100px">
                 <h4 class="font-size-48 font-weight-bold">Наши работы</h4>
                 <div class="my-3">
-                    <button class="btn btn-outline-info rounded-circle">PHP</button>
-                    <button class="btn btn-outline-danger rounded-circle">Laravel</button>
-                    <button class="btn btn-outline-warning rounded-circle">JavaScript</button>
-                    <button class="btn btn-outline-success rounded-circle">Vue.js</button>
-                    <button class="btn btn-outline-primary rounded-circle">WordPress</button>
+                    <button class="btn btn-outline-info rounded-circle" @click="ShowBlocks('PHP')">PHP</button>
+                    <button class="btn btn-outline-danger rounded-circle" @click="ShowBlocks('Laravel')">Laravel</button>
+                    <button class="btn btn-outline-warning rounded-circle" @click="ShowBlocks('JavaScript')">JavaScript</button>
+                    <button class="btn btn-outline-success rounded-circle" @click="ShowBlocks('Vue.js')">Vue.js</button>
+                    <button class="btn btn-outline-primary rounded-circle" @click="ShowBlocks('WordPress')">WordPress</button>
                 </div>
                 <div id="proj_block" style="position: relative; transition: all 0.5s ease-in-out;" :style="'min-height:'+(Math.floor((projects.length-unvisibles)/projectsInRow)+((projects.length-unvisibles)%projectsInRow ? 1 : 0))*projectDefaultHeight+'px;'">
                     <project-block v-for="(project, index) in projects" :index="index" :obj="project" :key="'key-'+index"></project-block>

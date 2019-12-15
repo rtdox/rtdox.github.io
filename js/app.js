@@ -42,24 +42,13 @@ Vue.component('project-block', {
     },
 
     methods: {
-        Hide() {
+        Hide(){
             this.obj.visible = false;
-            this.$root.$data.unvisibles = 0;
-
-            for(let i=0; i<this.$root.$data.projects.length; i++){
-                if(this.$root.$data.projects[i].visible){
-                    this.$root.$data.projects[i].order = i-this.$root.$data.unvisibles;
-                } else {
-                    this.$root.$data.unvisibles++;
-                    this.$root.$data.projects[i].order = this.$root.$data.projects.length-this.$root.$data.unvisibles;
-                }
-            }
-
-            //============end of Hide()==========
+            this.$root.SortBlocks();
         }
     },
 
-    template: '<div class="project_block" v-show="this.obj.visible" :style="styling" @click="Hide()">{{this.obj.name}}</div>'
+    template: '<div class="project_block" v-show="this.obj.visible" :style="styling" @click="Hide">{{this.obj.name}}</div>'
 });
 
 
@@ -68,19 +57,19 @@ var app = new Vue({
     el: '#app',
     data: {
         projects: [ 
-            {"name":"LFP","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
-            {"name":"Love 3:16","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
-            {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
-            {"name":"Geo Location","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
-            {"name":"Metro style","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
-            {"name":"Git","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
-            {"name":"YouTube","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
-            {"name":"Laravel","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
-            {"name":"PHP","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
-            {"name":"HTML","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
-            {"name":"CSS","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
-            {"name":"JQuery","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
-            {"name":"KEN Academy","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true}
+            {"name":"LFP","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['PHP','Laravel','Vue.js']},
+            {"name":"Love 3:16","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['PHP','Laravel','JavaScript']},
+            {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['PHP','Laravel','JavaScript']},
+            {"name":"Geo Location","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['JavaScript']},
+            {"name":"Metro style","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['WordPress']},
+            {"name":"Git","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['JavaScript']},
+            {"name":"YouTube","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['JavaScript']},
+            {"name":"Laravel","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['Vue.js']},
+            {"name":"PHP","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['PHP']},
+            {"name":"HTML","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['JavaScript']},
+            {"name":"CSS","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['JavaScript']},
+            {"name":"JQuery","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['JavaScript']},
+            {"name":"KEN Academy","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['PHP','WordPress','JavaScript']}
         ],
 
         unvisibles: 0,
@@ -135,6 +124,31 @@ var app = new Vue({
         
         beforeDestroy() {
             window.removeEventListener('resize', this.getWindowWidth);
+        },
+
+        SortBlocks(){
+            this.unvisibles = 0;
+
+            for(let i=0; i<this.projects.length; i++){
+                if(this.projects[i].visible){
+                    this.projects[i].order = i-this.unvisibles;
+                } else {
+                    this.unvisibles++;
+                    this.projects[i].order = this.projects.length-this.unvisibles;
+                }
+            }
+        },
+
+        ShowBlocks(text){
+            this.projects.forEach(item => {
+                if(item.techs.includes(text)){
+                    item.visible = true;
+                } else {
+                    item.visible = false;
+                }
+            });
+
+            this.SortBlocks();
         }
     }
 });
