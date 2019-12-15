@@ -51,7 +51,7 @@
                     <button class="btn btn-outline-success rounded-circle">Vue.js</button>
                     <button class="btn btn-outline-primary rounded-circle">WordPress</button>
                 </div>
-                <div id="proj_block" style="position: relative;" :style="'min-height:'+(Math.floor(projects.length/projectsInRow)+(projects.length%projectsInRow ? 1 : 0))*projectDefaultHeight+'px;'">
+                <div id="proj_block" style="position: relative; transition: all 0.5s ease-in-out;" :style="'min-height:'+(Math.floor((projects.length-unvisibles)/projectsInRow)+((projects.length-unvisibles)%projectsInRow ? 1 : 0))*projectDefaultHeight+'px;'">
                     <project-block v-for="(project, index) in projects" :index="index" :obj="project" :key="'key-'+index"></project-block>
                 </div>
             </div>

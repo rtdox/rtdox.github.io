@@ -2,7 +2,8 @@
 Vue.component('project-block', {
     data(){
         return {
-            order: 5
+            start_color: '#000',
+            start_bgcolor: '#000'
         }
     },
 
@@ -11,12 +12,12 @@ Vue.component('project-block', {
     computed: {
         styling: function() {
             return {
-                color: getRandomColor(),
-                backgroundColor: getRandomColor(),
+                color: this.start_color,
+                backgroundColor: this.start_bgcolor,
                 fontWeight: 'bold',
                 
-                left: Math.floor(this.order%this.$root.$data.projectsInRow)*Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)+'px',
-                top:  Math.floor(this.order/this.$root.$data.projectsInRow)*this.$root.$data.projectDefaultHeight+'px',
+                left: Math.floor(this.obj.order%this.$root.$data.projectsInRow)*Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)+'px',
+                top:  Math.floor(this.obj.order/this.$root.$data.projectsInRow)*this.$root.$data.projectDefaultHeight+'px',
 
                 minWidth: Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)+'px',
                 maxWidth: Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)+'px',
@@ -29,21 +30,36 @@ Vue.component('project-block', {
         }
     },
 
+    watch: {
+        //
+    },
+
     mounted() {
-        setTimeout( () => { this.order = this.index }, Math.random()*1400+100);
+        setTimeout( () => {this.obj.order = this.index}, getRandomArbitrary(400,400));
+        //this.obj.order = this.index;
+        this.start_color = getRandomColor();
+        this.start_bgcolor = getRandomColor();
     },
 
     methods: {
-        getRandomInt(max) {
-            return Math.floor(Math.random() * Math.floor(max));
-        },
+        Hide() {
+            this.obj.visible = false;
+            this.$root.$data.unvisibles = 0;
 
-        Shuffle() {
-            this.order = Math.random() * (this.$root.$data.projects.length - 1) + 1;
+            for(let i=0; i<this.$root.$data.projects.length; i++){
+                if(this.$root.$data.projects[i].visible){
+                    this.$root.$data.projects[i].order = i-this.$root.$data.unvisibles;
+                } else {
+                    this.$root.$data.unvisibles++;
+                    this.$root.$data.projects[i].order = this.$root.$data.projects.length-this.$root.$data.unvisibles;
+                }
+            }
+
+            //============end of Hide()==========
         }
     },
 
-    template: '<div class="project_block" :style="styling" @click="Shuffle">{{this.obj.name}}</div>'
+    template: '<div class="project_block" v-show="this.obj.visible" :style="styling" @click="Hide()">{{this.obj.name}}</div>'
 });
 
 
@@ -52,20 +68,22 @@ var app = new Vue({
     el: '#app',
     data: {
         projects: [ 
-            {"name":"LFP","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
-            {"name":"Love 3:16","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
-            {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
-            {"name":"Geo Location","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
-            {"name":"Metro style","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
-            {"name":"Git","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
-            {"name":"YouTube","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
-            {"name":"Laravel","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
-            {"name":"PHP","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
-            {"name":"HTML","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
-            {"name":"CSS","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
-            {"name":"JQuery","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"},
-            {"name":"KEN Academy","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg"}
+            {"name":"LFP","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
+            {"name":"Love 3:16","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
+            {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
+            {"name":"Geo Location","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
+            {"name":"Metro style","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
+            {"name":"Git","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
+            {"name":"YouTube","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
+            {"name":"Laravel","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
+            {"name":"PHP","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
+            {"name":"HTML","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
+            {"name":"CSS","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
+            {"name":"JQuery","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true},
+            {"name":"KEN Academy","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true}
         ],
+
+        unvisibles: 0,
 
         projBlockWidth: 290,
         projectDefaultHeight: 200,
@@ -73,6 +91,10 @@ var app = new Vue({
     },
 
     created: function(){
+        // this.projects.forEach((item, index) => {
+        //     item.order = index;
+        // });
+
         //load projects from file
     },
 
@@ -83,6 +105,14 @@ var app = new Vue({
             //Init
             this.getWindowWidth();
         });
+    },
+
+    watch: {
+        // projects: function(){
+        //     this.projects.forEach((item, index)=>{
+        //         item.order = index;
+        //     });
+        // }
     },
 
     methods: {
@@ -109,7 +139,7 @@ var app = new Vue({
     }
 });
 
-
+//===================== functions ==========================
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }
@@ -123,7 +153,7 @@ function getRandomColor() {
     return color;
 }
 
-
+//======================= jQuery ========================
 $(document).ready(function () {
     $('.hidden_phone').click(function(e) {
         e.preventDefault();
