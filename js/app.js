@@ -62,7 +62,6 @@ var app = new Vue({
     },
 
     created: function(){
-        //load projects from file
         axios.get('projects/projects.txt').then(
             response => (
                 this.projects = response.data
@@ -123,6 +122,7 @@ var app = new Vue({
             this.unvisibles = 0;
 
             this.projects.forEach(item => {
+                item.order = 0;
                 if(item.techs.includes(text)){
                     item.visible = true;
                 } else {
@@ -131,8 +131,7 @@ var app = new Vue({
                 }
             });
 
-            setTimeout( () => { this.SortBlocks() }, 150 );
-            //this.SortBlocks();
+            setTimeout( () => { this.SortBlocks() }, 5 );
         },
 
         ShowAll(){
@@ -140,11 +139,11 @@ var app = new Vue({
             this.unvisibles = 0;
 
             this.projects.forEach(item => {
+                item.order = 0;
                 item.visible = true;
             });
 
-            setTimeout( () => { this.SortBlocks() }, 150 );
-            //this.SortBlocks();
+            setTimeout( () => { this.SortBlocks() }, 5 );
         }
     }
 });
