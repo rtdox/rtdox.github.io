@@ -56,7 +56,9 @@ var app = new Vue({
 
         projBlockWidth: 290,
         projectDefaultHeight: 200,
-        projectsInRow: 4
+        projectsInRow: 4,
+
+        currentTech: 'ShowAll'
     },
 
     created: function(){
@@ -117,22 +119,32 @@ var app = new Vue({
         },
 
         ShowBlocks(text){
+            this.currentTech = text;
+            this.unvisibles = 0;
+
             this.projects.forEach(item => {
                 if(item.techs.includes(text)){
                     item.visible = true;
                 } else {
                     item.visible = false;
+                    this.unvisibles++;
                 }
             });
 
-            this.SortBlocks();
+            setTimeout( () => { this.SortBlocks() }, 150 );
+            //this.SortBlocks();
         },
 
         ShowAll(){
+            this.currentTech = 'ShowAll';
+            this.unvisibles = 0;
+
             this.projects.forEach(item => {
                 item.visible = true;
             });
-            this.SortBlocks();
+
+            setTimeout( () => { this.SortBlocks() }, 150 );
+            //this.SortBlocks();
         }
     }
 });
