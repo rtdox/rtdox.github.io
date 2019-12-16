@@ -2,8 +2,7 @@
 Vue.component('project-block', {
     data(){
         return {
-            start_color: '#000',
-            start_bgcolor: '#000'
+            //
         }
     },
 
@@ -12,20 +11,18 @@ Vue.component('project-block', {
     computed: {
         styling: function() {
             return {
-                color: this.start_color,
-                backgroundColor: this.start_bgcolor,
-                fontWeight: 'bold',
-                
-                left: Math.floor(this.obj.order%this.$root.$data.projectsInRow)*Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)+'px',
-                top:  Math.floor(this.obj.order/this.$root.$data.projectsInRow)*this.$root.$data.projectDefaultHeight+'px',
+                left: Math.floor(this.obj.order%this.$root.$data.projectsInRow)*Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)+5+'px',
+                top:  Math.floor(this.obj.order/this.$root.$data.projectsInRow)*this.$root.$data.projectDefaultHeight+5+'px',
 
-                minWidth: Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)+'px',
-                maxWidth: Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)+'px',
-                width:    Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)+'px',
+                minWidth: Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)-10+'px',
+                maxWidth: Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)-10+'px',
+                width:    Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)-10+'px',
 
-                minHeight: this.$root.$data.projectDefaultHeight+'px',
-                maxHeight: this.$root.$data.projectDefaultHeight+'px',
-                height:    this.$root.$data.projectDefaultHeight+'px',
+                minHeight: this.$root.$data.projectDefaultHeight-10+'px',
+                maxHeight: this.$root.$data.projectDefaultHeight-10+'px',
+                height:    this.$root.$data.projectDefaultHeight-10+'px',
+
+                backgroundImage: 'url('+this.obj.image+')',
             }
         }
     },
@@ -35,10 +32,7 @@ Vue.component('project-block', {
     },
 
     mounted() {
-        setTimeout( () => {this.obj.order = this.index}, getRandomArbitrary(400,900));
-        //this.obj.order = this.index;
-        this.start_color = getRandomColor();
-        this.start_bgcolor = getRandomColor();
+        setTimeout( () => {this.obj.order = this.index}, getRandom(400,900));
     },
 
     methods: {
@@ -48,7 +42,7 @@ Vue.component('project-block', {
         }
     },
 
-    template: '<div class="project_block" v-show="this.obj.visible" :style="styling" @click="Hide">{{this.obj.name}}</div>'
+    template: '<div class="project_block d-flex flex-column justify-content-between" v-if="this.obj.visible" :style="styling" @click="Hide"><div class="bg-dark text-center">{{this.obj.name}}</div><div class="bg-dark text-center">{{this.obj.description}}</div></div>'
 });
 
 
@@ -56,21 +50,7 @@ Vue.component('project-block', {
 var app = new Vue({
     el: '#app',
     data: {
-        projects: [ 
-            {"name":"LFP","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['PHP','Laravel','Vue.js']},
-            {"name":"Love 3:16","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['PHP','Laravel','JavaScript']},
-            {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['PHP','Laravel','JavaScript']},
-            {"name":"Geo Location","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['JavaScript']},
-            {"name":"Metro style","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['WordPress']},
-            {"name":"Git","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['JavaScript']},
-            {"name":"YouTube","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['JavaScript']},
-            {"name":"Laravel","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['Vue.js']},
-            {"name":"PHP","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['PHP']},
-            {"name":"HTML","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['JavaScript']},
-            {"name":"CSS","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['JavaScript']},
-            {"name":"JQuery","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['JavaScript']},
-            {"name":"KEN Academy","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":['PHP','WordPress','JavaScript']}
-        ],
+        projects: [],
 
         unvisibles: 0,
 
@@ -80,11 +60,12 @@ var app = new Vue({
     },
 
     created: function(){
-        // this.projects.forEach((item, index) => {
-        //     item.order = index;
-        // });
-
         //load projects from file
+        axios.get('projects/projects.txt').then(
+            response => (
+                this.projects = response.data
+            )
+        );
     },
 
     mounted() {
@@ -97,11 +78,7 @@ var app = new Vue({
     },
 
     watch: {
-        // projects: function(){
-        //     this.projects.forEach((item, index)=>{
-        //         item.order = index;
-        //     });
-        // }
+        //
     },
 
     methods: {
@@ -161,7 +138,7 @@ var app = new Vue({
 });
 
 //===================== functions ==========================
-function getRandomArbitrary(min, max) {
+function getRandom(min, max) {
     return Math.random() * (max - min) + min;
 }
 
