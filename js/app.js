@@ -36,13 +36,17 @@ Vue.component('project-block', {
     },
 
     methods: {
-        Hide(){
-            this.obj.visible = false;
-            this.$root.SortBlocks();
-        }
+        //
     },
 
-    template: '<div class="project_block d-flex flex-column justify-content-between" v-if="this.obj.visible" :style="styling" @click="Hide"><div class="bg-dark text-center">{{this.obj.name}}</div><div class="bg-dark text-center">{{this.obj.description}}</div></div>'
+    template:   '<div class="project_block d-flex flex-column justify-content-between" v-if="this.obj.visible" :style="styling">'+
+                    '<div class="bg-dark text-center">{{this.obj.name}}</div>'+
+                    '<div class="bg-dark text-center">'+
+                    '{{this.obj.description}}<br>'+
+                    '<button class="btn btn-sm btn-primary rounded-0 my-2">Read More &rarr;</button><br>'+
+                    '<button class="btn btn-sm btn-warning rounded-0 mb-2">Visit Site &rarr;</button>'+
+                    '</div>'+
+                '</div>'
 });
 
 
@@ -55,7 +59,7 @@ var app = new Vue({
         unvisibles: 0,
 
         projBlockWidth: 290,
-        projectDefaultHeight: 200,
+        projectDefaultHeight: 400,
         projectsInRow: 4,
 
         currentTech: 'ShowAll'

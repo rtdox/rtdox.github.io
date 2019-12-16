@@ -97,16 +97,19 @@ body {
 .project_block {
     position: absolute;
     display: block;
-    background-color: #ccc;
-    border: none;
+    background-color: #fff;
+    border: 1px solid #343A40;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top 24px center;
-    transition: top 0.5s ease-in-out, left 0.5s ease-in-out, background-position 5s ease-in-out;
+    transition: top 0.5s ease-in-out, left 0.5s ease-in-out, background-position 5s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
 .project_block:hover {
-    background-position: bottom center;
+    background-position: bottom 110px center;
+    border: 1px solid #00BBFF;
+    box-shadow: 0 0 15px #00BBFF;
+    z-index: 5;
 }
 
 /* ======= @MEDIA  ======= */
