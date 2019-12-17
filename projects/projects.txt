@@ -1,15 +1,57 @@
 [
-    {"name":"LFP","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":["PHP","Laravel","Vue.js"]},
+    {
+        "name":"LFP",
+        "description":"Доска объявлений для поиска друзей",
+        "link":"https://lfp.com.ua",
+        "image":"projects/img/lfp.jpg",
+        "order":0,
+        "visible":true,
+        "techs":[
+            "PHP",
+            "Laravel",
+            "Vue.js"
+        ]
+    },
     
-    {"name":"Love 3:16","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/love.jpg","order":0,"visible":true,"techs":["PHP","Laravel","JavaScript"]},
+    {
+        "name":"Love 3:16",
+        "description":"Доска объявлений для поиска друзей",
+        "link":"https://lfp.com.ua",
+        "image":"projects/img/love.jpg",
+        "order":0,
+        "visible":true,
+        "techs":[
+            "PHP",
+            "Laravel",
+            "JavaScript"
+        ]
+    },
     
-    {"name":"Art-Daysun","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/coinpage.jpg","order":0,"visible":true,"techs":["PHP","Laravel","JavaScript"]},
+    {
+        "name":"Art-Daysun",
+        "description":"Доска объявлений для поиска друзей",
+        "link":"https://lfp.com.ua",
+        "image":"projects/img/coinpage.jpg",
+        "order":0,
+        "visible":true,
+        "techs":[
+            "PHP",
+            "Laravel",
+            "JavaScript"
+        ]
+    },
     
-    {"name":"Voda","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/voda.jpg","order":0,"visible":true,"techs":["JavaScript"]},
+    {
+        "name":"Voda","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/voda.jpg","order":0,"visible":true,"techs":["JavaScript"]
+    },
     
-    {"name":"Metro style","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/fundakleen.jpg","order":0,"visible":true,"techs":["WordPress"]},
+    {
+        "name":"Metro style","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/fundakleen.jpg","order":0,"visible":true,"techs":["WordPress"]
+    },
     
-    {"name":"Git","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":["JavaScript"]},
+    {
+        "name":"Git","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":["JavaScript"]
+    },
     
     {"name":"YouTube","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":["JavaScript"]},
     
@@ -23,5 +65,17 @@
     
     {"name":"JQuery","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":["JavaScript"]},
     
-    {"name":"KEN Academy","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/ken.jpg","order":0,"visible":true,"techs":["PHP","WordPress","JavaScript"]}
+    {
+        "name":"KEN Academy",
+        "description":"Доска объявлений для поиска друзей",
+        "link":"https://lfp.com.ua",
+        "image":"projects/img/ken.jpg",
+        "order":0,
+        "visible":true,
+        "techs":[
+            "PHP",
+            "WordPress",
+            "JavaScript"
+        ]
+    }
 ]

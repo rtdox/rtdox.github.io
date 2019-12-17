@@ -105,11 +105,17 @@ body {
     transition: top 0.5s ease-in-out, left 0.5s ease-in-out, background-position 5s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
-.project_block:hover {
+.project_block:hover, .project_block:active, .project_block:focus {
     background-position: bottom 110px center;
     border: 1px solid #00BBFF;
     box-shadow: 0 0 15px #00BBFF;
     z-index: 5;
+}
+
+hr {
+    margin: 5px 0;
+    border: 0;
+    border-top: 1px solid rgba(0, 187, 255, 0.3);
 }
 
 /* ======= @MEDIA  ======= */
