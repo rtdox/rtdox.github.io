@@ -1,7 +1,7 @@
 [
     {
         "name":"LFP",
-        "description":"Доска объявлений для поиска друзей",
+        "description":"Сайт для поиска друзей и совместного отдыха, занятий спортом, похода в кино или на природу.",
         "link":"https://lfp.com.ua",
         "image":"projects/img/lfp.jpg",
         "order":0,
@@ -9,73 +9,67 @@
         "techs":[
             "PHP",
             "Laravel",
-            "Vue.js"
+            "jQuery",
+            "Vue.js",
+            "Bootstrap"
         ]
     },
-    
+
+    {
+        "name":"KEN Academy",
+        "description":"Онлайн школа иностранных языков.",
+        "link":"https://ken-academy.com",
+        "image":"projects/img/ken.jpg",
+        "order":0,
+        "visible":true,
+        "techs":[
+            "PHP",
+            "JavaScript",
+            "WordPress"
+        ]
+    },
+
     {
         "name":"Love 3:16",
-        "description":"Доска объявлений для поиска друзей",
-        "link":"https://lfp.com.ua",
+        "description":"Сайт христианских знакомств.",
+        "link":"https://love316.net",
         "image":"projects/img/love.jpg",
         "order":0,
         "visible":true,
         "techs":[
             "PHP",
             "Laravel",
-            "JavaScript"
+            "jQuery",
+            "Bootstrap"
         ]
     },
-    
+
     {
-        "name":"Art-Daysun",
-        "description":"Доска объявлений для поиска друзей",
-        "link":"https://lfp.com.ua",
-        "image":"projects/img/coinpage.jpg",
+        "name":"Вода «Пятигор»",
+        "description":"Доставка питьевой воды «Пятигор» в Кременчуге.",
+        "link":"https://www.patigor-voda.com.ua",
+        "image":"projects/img/voda.jpg",
+        "order":0,
+        "visible":true,
+        "techs":[
+            "PHP",
+            "JavaScript",
+            "WordPress"
+        ]
+    },
+
+    {
+        "name":"Виктор Дейсун",
+        "description":"Персональный сайт украинского художника абстракциониста Виктора Дейсуна.",
+        "link":"https://art-daysun.inf.ua",
+        "image":"projects/img/artdaysun.jpg",
         "order":0,
         "visible":true,
         "techs":[
             "PHP",
             "Laravel",
-            "JavaScript"
-        ]
-    },
-    
-    {
-        "name":"Voda","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/voda.jpg","order":0,"visible":true,"techs":["JavaScript"]
-    },
-    
-    {
-        "name":"Metro style","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/fundakleen.jpg","order":0,"visible":true,"techs":["WordPress"]
-    },
-    
-    {
-        "name":"Git","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":["JavaScript"]
-    },
-    
-    {"name":"YouTube","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":["JavaScript"]},
-    
-    {"name":"Laravel","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":["Vue.js"]},
-    
-    {"name":"PHP","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":["PHP"]},
-    
-    {"name":"HTML","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":["JavaScript"]},
-    
-    {"name":"CSS","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":["JavaScript"]},
-    
-    {"name":"JQuery","description":"Доска объявлений для поиска друзей","link":"https://lfp.com.ua","image":"projects/img/lfp.jpg","order":0,"visible":true,"techs":["JavaScript"]},
-    
-    {
-        "name":"KEN Academy",
-        "description":"Доска объявлений для поиска друзей",
-        "link":"https://lfp.com.ua",
-        "image":"projects/img/ken.jpg",
-        "order":0,
-        "visible":true,
-        "techs":[
-            "PHP",
-            "WordPress",
-            "JavaScript"
+            "jQuery",
+            "Bootstrap"
         ]
     }
 ]

@@ -42,11 +42,11 @@ Vue.component('project-block', {
     template:   '<div class="project_block d-flex flex-column justify-content-between" v-if="this.obj.visible" :style="styling">'+
                     '<div class="block_title bg-dark text-center font-weight-bold">{{this.obj.name}}</div>'+
                     '<div class="bg-dark p-2">'+
-                    '<div>{{this.obj.description}}</div><hr>'+
+                    '<div>{{this.obj.description}}<br><a :href="this.obj.link" target="_blank">{{this.obj.link}}</a></div><hr>'+
                     '<div>Технологии: <span v-for="(tech, index) in this.obj.techs" :key="\'t-\'+index" class="badge badge-warning rounded-0 m-1">{{tech}}</span></div><hr>'+
                     '<div class="text-right">'+
-                        '<button class="btn btn-sm btn-primary rounded-0 mt-2 mr-2">Read More &rarr;</button>'+
-                        '<button class="btn btn-sm btn-warning rounded-0 mt-2">Visit Site &rarr;</button>'+
+                        '<a href="#" class="btn btn-sm btn-primary rounded-0 mt-2 mr-2">Подробнее &rarr;</a>'+
+                        '<a :href="this.obj.link" target="_blank" class="btn btn-sm btn-warning rounded-0 mt-2">Сайт &rarr;</a>'+
                     '</div>'+
                     '</div>'+
                 '</div>'

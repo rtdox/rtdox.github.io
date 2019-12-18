@@ -112,10 +112,26 @@ body {
     z-index: 5;
 }
 
+
+/* ============ Standard Elements ============= */
 hr {
     margin: 5px 0;
     border: 0;
     border-top: 1px solid rgba(0, 187, 255, 0.3);
+}
+
+a {
+    text-decoration: none;
+    color: #00BBFF;
+}
+a:hover {
+    text-decoration: none;
+    color: #00BBFF;
+    text-shadow: 0 0 5px #00BBFF;
+}
+
+a.btn {
+    text-shadow: none;
 }
 
 /* ======= @MEDIA  ======= */
