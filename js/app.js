@@ -114,7 +114,7 @@ var app = new Vue({
         SortBlocks(){
             this.unvisibles = 0;
 
-            for(let i=0; i<this.projects.length; i++){
+            for(let i in this.projects){
                 if(this.projects[i].visible){
                     this.projects[i].order = i-this.unvisibles;
                 } else {
@@ -161,9 +161,9 @@ function getRandom(min, max) {
 }
 
 function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
