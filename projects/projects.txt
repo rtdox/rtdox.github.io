@@ -11,7 +11,9 @@
             "Laravel",
             "jQuery",
             "Vue.js",
-            "Bootstrap"
+            "Bootstrap",
+            "HTML",
+            "CSS"
         ]
     },
 
@@ -25,7 +27,9 @@
         "techs":[
             "PHP",
             "JavaScript",
-            "WordPress"
+            "WordPress",
+            "HTML",
+            "CSS"
         ]
     },
 
@@ -40,7 +44,9 @@
             "PHP",
             "Laravel",
             "jQuery",
-            "Bootstrap"
+            "Bootstrap",
+            "HTML",
+            "CSS"
         ]
     },
 
@@ -54,7 +60,9 @@
         "techs":[
             "PHP",
             "JavaScript",
-            "WordPress"
+            "WordPress",
+            "HTML",
+            "CSS"
         ]
     },
 
@@ -69,7 +77,9 @@
             "PHP",
             "Laravel",
             "jQuery",
-            "Bootstrap"
+            "Bootstrap",
+            "HTML",
+            "CSS"
         ]
     }
 ]
