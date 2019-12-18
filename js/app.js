@@ -2,7 +2,7 @@
 Vue.component('project-block', {
     data(){
         return {
-            //
+            bgpos: 0
         }
     },
 
@@ -25,7 +25,8 @@ Vue.component('project-block', {
         },
         bgimg: function(){
             return {
-                backgroundImage: 'url('+this.obj.image+')'
+                backgroundImage: 'url('+this.obj.image+')',
+                backgroundPosition: 'top '+this.bgpos+'% center'
             }
         }
     },
@@ -39,12 +40,18 @@ Vue.component('project-block', {
     },
 
     methods: {
-        //
+        ScrollBg(){
+            if(this.bgpos != 0){
+                this.bgpos = 0;
+            } else if(this.bgpos != 100){
+                this.bgpos = 100;
+            }
+        }
     },
 
     template:   '<div class="project_block d-flex flex-column justify-content-between" v-if="this.obj.visible" :style="styling">'+
                     '<div class="block_title bg-dark text-center font-weight-bold">{{this.obj.name}}</div>'+
-                    '<div class="image_zone flex-grow-1" :style="bgimg"></div>'+
+                    '<div class="image_zone flex-grow-1" :style="bgimg" @click="ScrollBg"></div>'+
                     '<div class="bg-dark p-2">'+
                         '<div>{{this.obj.description}}</div><hr>'+
                         '<div><a :href="this.obj.link" target="_blank">{{this.obj.link}}</a></div><hr>'+

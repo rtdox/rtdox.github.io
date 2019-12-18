@@ -98,12 +98,8 @@ body {
     background-color: #fff;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top center;
     transition: background-position 5s ease-in-out;
-}
-
-.image_zone:hover {
-    background-position: bottom center;
+    cursor: s-resize;
 }
 
 .project_block {
