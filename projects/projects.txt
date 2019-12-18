@@ -1,7 +1,7 @@
 [
     {
         "name":"LFP",
-        "description":"Сайт для поиска друзей и совместного отдыха, занятий спортом, похода в кино или на природу.",
+        "description":"Сайт для поиска друзей и совместного отдыха.",
         "link":"https://lfp.com.ua",
         "image":"projects/img/lfp.jpg",
         "order":0,
@@ -12,6 +12,7 @@
             "jQuery",
             "Vue.js",
             "Bootstrap",
+            "MySQL",
             "HTML",
             "CSS"
         ]
@@ -45,6 +46,7 @@
             "Laravel",
             "jQuery",
             "Bootstrap",
+            "MySQL",
             "HTML",
             "CSS"
         ]
@@ -67,8 +69,8 @@
     },
 
     {
-        "name":"Виктор Дейсун",
-        "description":"Персональный сайт украинского художника абстракциониста Виктора Дейсуна.",
+        "name":"Victor Daysun",
+        "description":"Персональный сайт украинского художника Виктора Дейсуна.",
         "link":"https://art-daysun.inf.ua",
         "image":"projects/img/artdaysun.jpg",
         "order":0,
@@ -78,6 +80,7 @@
             "Laravel",
             "jQuery",
             "Bootstrap",
+            "MySQL",
             "HTML",
             "CSS"
         ]

@@ -21,8 +21,11 @@ Vue.component('project-block', {
                 minHeight: this.$root.$data.projectDefaultHeight-10+'px',
                 maxHeight: this.$root.$data.projectDefaultHeight-10+'px',
                 height:    this.$root.$data.projectDefaultHeight-10+'px',
-
-                backgroundImage: 'url('+this.obj.image+')',
+            }
+        },
+        bgimg: function(){
+            return {
+                backgroundImage: 'url('+this.obj.image+')'
             }
         }
     },
@@ -41,13 +44,15 @@ Vue.component('project-block', {
 
     template:   '<div class="project_block d-flex flex-column justify-content-between" v-if="this.obj.visible" :style="styling">'+
                     '<div class="block_title bg-dark text-center font-weight-bold">{{this.obj.name}}</div>'+
+                    '<div class="image_zone flex-grow-1" :style="bgimg"></div>'+
                     '<div class="bg-dark p-2">'+
-                    '<div>{{this.obj.description}}<br><a :href="this.obj.link" target="_blank">{{this.obj.link}}</a></div><hr>'+
-                    '<div>Используемые технологии:<br><span v-for="(tech, index) in this.obj.techs" :key="\'t-\'+index" class="badge badge-warning rounded-0 mr-1 mb-1">{{tech}}</span></div><hr>'+
-                    '<div class="text-right">'+
-                        '<a href="#" class="btn btn-sm btn-primary rounded-0 mt-2 mr-2">Подробнее &rarr;</a>'+
-                        '<a :href="this.obj.link" target="_blank" class="btn btn-sm btn-warning rounded-0 mt-2">Сайт &rarr;</a>'+
-                    '</div>'+
+                        '<div>{{this.obj.description}}</div><hr>'+
+                        '<div><a :href="this.obj.link" target="_blank">{{this.obj.link}}</a></div><hr>'+
+                        '<div>Используемые технологии:<br><span v-for="(tech, index) in this.obj.techs" :key="\'t-\'+index" class="badge badge-warning rounded-0 mr-1 mb-1">{{tech}}</span></div><hr>'+
+                        '<div class="text-right">'+
+                            '<a href="#" class="btn btn-sm btn-primary rounded-0 mt-2 mr-2">Подробнее &rarr;</a>'+
+                            '<a :href="this.obj.link" target="_blank" class="btn btn-sm btn-warning rounded-0 mt-2">Сайт &rarr;</a>'+
+                        '</div>'+
                     '</div>'+
                 '</div>'
 });
@@ -62,7 +67,7 @@ var app = new Vue({
         unvisibles: 0,
 
         projBlockWidth: 290,
-        projectDefaultHeight: 400,
+        projectDefaultHeight: 500,
         projectsInRow: 4,
 
         currentTech: 'ShowAll'
