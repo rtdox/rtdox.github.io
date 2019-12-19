@@ -84,5 +84,37 @@
             "HTML",
             "CSS"
         ]
+    },
+
+    {
+        "name":"Fundakleen",
+        "description":"Сайт клининговой компании в Африке.",
+        "link":"https://www.fundakleen.com",
+        "image":"projects/img/fundakleen.jpg",
+        "order":0,
+        "visible":true,
+        "techs":[
+            "PHP",
+            "jQuery",
+            "WordPress",
+            "HTML",
+            "CSS"
+        ]
+    },
+
+    {
+        "name":"The Coin Page",
+        "description":"Конвертер криптовалют и африканских валют.",
+        "link":"",
+        "image":"projects/img/coinpage.jpg",
+        "order":0,
+        "visible":true,
+        "techs":[
+            "PHP",
+            "jQuery",
+            "Bootstrap",
+            "HTML",
+            "CSS"
+        ]
     }
 ]

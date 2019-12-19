@@ -54,11 +54,11 @@ Vue.component('project-block', {
                     '<div class="image_zone flex-grow-1" :style="bgimg" @click="ScrollBg"></div>'+
                     '<div class="bg-dark p-2">'+
                         '<div>{{this.obj.description}}</div><hr>'+
-                        '<div><a :href="this.obj.link" target="_blank">{{this.obj.link}}</a></div><hr>'+
+                        '<a :href="this.obj.link" target="_blank" v-if="this.obj.link">{{this.obj.link.replace("https://","")}}</a><hr v-if="this.obj.link">'+
                         '<div>Используемые технологии:<br><span v-for="(tech, index) in this.obj.techs" :key="\'t-\'+index" class="badge badge-warning rounded-0 mr-1 mb-1">{{tech}}</span></div><hr>'+
                         '<div class="text-right">'+
-                            '<a href="#" class="btn btn-sm btn-primary rounded-0 mt-2 mr-2">Подробнее &rarr;</a>'+
-                            '<a :href="this.obj.link" target="_blank" class="btn btn-sm btn-warning rounded-0 mt-2">Сайт &rarr;</a>'+
+                            '<button class="btn btn-sm btn-primary rounded-0 mt-2">Подробнее &rarr;</button>'+
+                            '<a :href="this.obj.link" target="_blank" v-if="this.obj.link" class="btn btn-sm btn-warning rounded-0 mt-2 ml-2">Сайт &rarr;</a>'+
                         '</div>'+
                     '</div>'+
                 '</div>'

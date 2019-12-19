@@ -95,7 +95,7 @@ body {
 
 /* ========project_block======== */
 .image_zone {
-    background-color: #fff;
+    background-color: #343A40;
     background-size: cover;
     background-repeat: no-repeat;
     transition: background-position 5s ease-in-out;
