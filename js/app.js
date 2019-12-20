@@ -29,6 +29,10 @@ Vue.component('project-block', {
                 backgroundImage: 'url('+this.obj.image+')',
                 backgroundPosition: 'top '+this.bgpos+'% center'
             }
+        },
+
+        currTech: function(){
+            return this.$root.$data.currentTech;
         }
     },
 
@@ -52,7 +56,7 @@ Vue.component('project-block', {
                     '<div class="bg-dark p-2">'+
                         '<div>{{this.obj.description}}</div><hr>'+
                         '<a :href="this.obj.link" target="_blank" v-if="this.obj.link">{{this.obj.link.replace("https://","")}}</a><hr v-if="this.obj.link">'+
-                        '<div>Используемые технологии:<br><span v-for="(tech, index) in this.obj.techs" :key="\'t-\'+index" class="badge badge-warning rounded-0 mr-1 mb-1">{{tech}}</span></div><hr>'+
+                        '<div>Используемые технологии:<br><span v-for="(tech, index) in this.obj.techs" :key="\'t-\'+index" class="badge rounded-0 mr-1 mb-1" :class="(currTech==tech || currTech==\'ShowAll\') ? \'badge-warning\' : \'badge-secondary\'">{{tech}}</span></div><hr>'+
                         '<div class="text-right">'+
                             '<button class="btn btn-sm btn-primary rounded-0 mt-2">Подробнее &rarr;</button>'+
                             '<a :href="this.obj.link" target="_blank" v-if="this.obj.link" class="btn btn-sm btn-warning rounded-0 mt-2 ml-2">Сайт &rarr;</a>'+
@@ -65,20 +69,22 @@ Vue.component('project-block', {
 // ============= MAIN VUE ELEMENT ==============
 var app = new Vue({
     el: '#app',
-    data: {
-        projects: [],
+    data() {
+        return {
+            projects: [],
 
-        unvisibles: 0,
+            unvisibles: 0,
 
-        projBlockWidth: 290,
-        projectDefaultHeight: 500,
-        projectsInRow: 4,
+            projBlockWidth: 290,
+            projectDefaultHeight: 500,
+            projectsInRow: 4,
 
-        currentTech: 'ShowAll',
+            currentTech: 'ShowAll',
 
-        phone_link: '#',
-        phone_text: '+38 (097) ПОКАЗАТЬ',
-        phone_showed: false
+            phone_link: '#',
+            phone_text: '+38 (097) ПОКАЗАТЬ',
+            phone_showed: false
+        }
     },
 
     created: function(){
