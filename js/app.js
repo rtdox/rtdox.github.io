@@ -11,7 +11,7 @@ Vue.component('project-block', {
     computed: {
         styling: function() {
             return {
-                left: Math.floor(this.obj.order%this.$root.$data.projectsInRow)*Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)+5+'px',
+                left: Math.floor(this.obj.order%this.$root.$data.projectsInRow)*Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)+'px',
                 top:  Math.floor(this.obj.order/this.$root.$data.projectsInRow)*this.$root.$data.projectDefaultHeight+5+'px',
 
                 minWidth: Math.floor(this.$root.$data.projBlockWidth/this.$root.$data.projectsInRow)-10+'px',
