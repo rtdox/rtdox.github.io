@@ -81,10 +81,11 @@
         <div class="my-cont py-100px position-relative">
             <div class="square-decor"></div>
             <h4 class="font-size-48 font-weight-bold">Наши контакты</h4>
-            <h5>Телефон: +38 099 999 99 99</h5>
-            <h5>Instagram @rtdox</h5>
-            <h5>Facebook @artem.daysun</h5>
-            <h5>Skype: a.daysun</h5>
+            <h5><a :href="phone_link" @click="ShowPhone"><img src="img/phone.svg" alt="phone logo svg" width="20"> <img src="img/telegram.svg" alt="telegram logo svg" width="20" style="position: relative; top: -1px;"> <img src="img/viber.svg" alt="viber logo svg" width="20"> {{phone_text}}</a></h5>
+            <h5><a href="https://www.instagram.com/rtdox/" target="_blank"><img src="img/instagram.svg" alt="instagram logo svg" width="20"> rtdox</a></h5>
+            <h5><a href="https://www.facebook.com/artem.daysun" target="_blank"><img src="img/facebook.svg" alt="facebook logo svg" width="20"> artem.daysun</a></h5>
+            <h5><a href="https://www.linkedin.com/in/artem-daysun/" target="_blank"><img src="img/linkedin.svg" alt="linkedin logo svg" width="20"> artem-daysun</a></h5>
+            <h5><a href="skype:a.daysun?chat"><img src="img/skype.svg" alt="skype logo svg" width="20"> a.daysun</a></h5>
         </div>
     </div>
 

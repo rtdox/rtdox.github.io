@@ -23,16 +23,13 @@ Vue.component('project-block', {
                 height:    this.$root.$data.projectDefaultHeight-10+'px',
             }
         },
+
         bgimg: function(){
             return {
                 backgroundImage: 'url('+this.obj.image+')',
                 backgroundPosition: 'top '+this.bgpos+'% center'
             }
         }
-    },
-
-    watch: {
-        //
     },
 
     mounted() {
@@ -77,7 +74,11 @@ var app = new Vue({
         projectDefaultHeight: 500,
         projectsInRow: 4,
 
-        currentTech: 'ShowAll'
+        currentTech: 'ShowAll',
+
+        phone_link: '#',
+        phone_text: '+38 (097) ПОКАЗАТЬ',
+        phone_showed: false
     },
 
     created: function(){
@@ -95,10 +96,6 @@ var app = new Vue({
             //Init
             this.getWindowWidth();
         });
-    },
-
-    watch: {
-        //
     },
 
     methods: {
@@ -163,6 +160,26 @@ var app = new Vue({
             });
 
             setTimeout( () => { this.SortBlocks() }, 5 );
+        },
+
+        ShowPhone(e){
+            if(!this.phone_showed){
+                e.preventDefault();
+
+                let b = ') 233-2';
+                let code = '097';
+                let a = '+38 (';
+                let c = '4-98';
+                this.phone_text = a+code+b+c;
+
+                let d2 = '498';
+                let a2 = '+38';
+                let c2 = '2332';
+                let b2 = '097';
+                this.phone_link = 'tel:'+a2+b2+c2+d2;
+
+                this.phone_showed = true;
+            }
         }
     }
 });
@@ -171,30 +188,3 @@ var app = new Vue({
 function getRandom(min, max) {
     return Math.random() * (max - min) + min;
 }
-
-function getRandomColor() {
-    let letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
-
-//======================= jQuery ========================
-$(document).ready(function () {
-    $('.hidden_phone').click(function(e) {
-        e.preventDefault();
-        const c = '23';
-        const b = '900';
-        const d = '55';
-        const a = '+38 (093)';
-        let span = a+'ara'+b+'gtg'+c+'gtg'+d;
-        let str = 'telyjy'+span;
-        span = span.replace('ara', ' ').replace('gtg', '-').replace('gtg', '-');
-        str = str.replace('yjy', ':').replace('ara', '').replace('gtg', '').replace('gtg', '').replace(' ', '').replace('(', '').replace(')', '');
-        $(this).attr('href', str);
-        $('#span_for_phone').html(span);
-        $('.hidden_phone').off('click');
-    });
-});

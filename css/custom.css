@@ -136,6 +136,10 @@ a.btn {
     text-shadow: none;
 }
 
+a:hover img {
+    filter: drop-shadow(0 0 2px #00BBFF);
+}
+
 
 
 /* ======= @MEDIA  ======= */
