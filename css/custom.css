@@ -115,6 +115,31 @@ body {
 }
 
 
+/* ============ ETAP BLOCKS =============== */
+.etap {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    
+    padding: 20px 30px 0 0;
+    width: 32%;
+}
+
+.etap_number {
+    padding-right: 10px;
+    font-weight: bold;
+    font-size: 70px;
+}
+
+.etap_text {
+    padding-right: 10px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+
 /* ============ Standard Elements ============= */
 hr {
     margin: 5px 0;
@@ -248,6 +273,13 @@ a:hover img {
     .h-120px {
         height: 100px !important;
     }
+
+    .etap {
+        width: 49%;
+    }
+    .etap_text {
+        font-size: 20px;
+    }
 }
 @media (max-width: 767px) {
     .my-33px {
@@ -307,5 +339,9 @@ a:hover img {
         right: 20px;
         width: 50px;
         height: 50px;
+    }
+
+    .etap {
+        width: 99%;
     }
 }

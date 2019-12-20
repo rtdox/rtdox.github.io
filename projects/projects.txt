@@ -94,9 +94,8 @@
         "order":0,
         "visible":true,
         "techs":[
-            "PHP",
-            "jQuery",
             "WordPress",
+            "jQuery",
             "HTML",
             "CSS"
         ]
