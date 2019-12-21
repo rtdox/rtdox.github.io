@@ -56,11 +56,11 @@ Vue.component('project-block', {
                     '<div class="bg-dark p-2">'+
                         '<div>{{this.obj.description}}</div><hr>'+
                         '<a :href="this.obj.link" target="_blank" v-if="this.obj.link">{{this.obj.link.replace("https://","")}}</a><hr v-if="this.obj.link">'+
-                        '<div>Используемые технологии:<br><span v-for="(tech, index) in this.obj.techs" :key="\'t-\'+index" class="badge rounded-0 mr-1 mb-1" :class="(currTech==tech || currTech==\'ShowAll\') ? \'badge-warning\' : \'badge-secondary\'">{{tech}}</span></div><hr>'+
-                        '<div class="text-right">'+
-                            '<button class="btn btn-sm btn-primary rounded-0 mt-2">Подробнее &rarr;</button>'+
-                            '<a :href="this.obj.link" target="_blank" v-if="this.obj.link" class="btn btn-sm btn-warning rounded-0 mt-2 ml-2">Сайт &rarr;</a>'+
-                        '</div>'+
+                        '<div>Используемые технологии:<br><span v-for="(tech, index) in this.obj.techs" :key="\'t-\'+index" class="badge rounded-0 mr-1 mb-1" :class="(currTech==tech || currTech==\'ShowAll\') ? \'badge-warning\' : \'badge-secondary\'">{{tech}}</span></div>'+
+                        //'<hr><div class="text-right">'+
+                            //'<button class="btn btn-sm btn-primary rounded-0 mt-2">Подробнее &rarr;</button>'+
+                            //'<a :href="this.obj.link" target="_blank" v-if="this.obj.link" class="btn btn-sm btn-warning rounded-0 mt-2 ml-2">Сайт &rarr;</a>'+
+                        //'</div>'+
                     '</div>'+
                 '</div>'
 });
@@ -76,7 +76,7 @@ var app = new Vue({
             unvisibles: 0,
 
             projBlockWidth: 290,
-            projectDefaultHeight: 500,
+            projectDefaultHeight: 400,
             projectsInRow: 4,
 
             currentTech: 'ShowAll',

@@ -99,7 +99,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     transition: background-position 5s ease-in-out;
-    cursor: s-resize;
+    /* cursor: s-resize; */
+    cursor: zoom-in;
 }
 
 .project_block {
