@@ -115,5 +115,20 @@
             "HTML",
             "CSS"
         ]
+    },
+
+    {
+        "name":"WEB STUDIO",
+        "description":"Портфолио веб-студии в Кременчуге.",
+        "link":"https://rtdox.github.io",
+        "image":"projects/img/rtdox.jpg",
+        "order":0,
+        "visible":true,
+        "techs":[
+            "Vue.js",
+            "Bootstrap",
+            "HTML",
+            "CSS"
+        ]
     }
 ]
