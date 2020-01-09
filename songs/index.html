@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="custom.css">
+
+    <script src="jquery-3.4.1.slim.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="axios.min.js"></script>
+    <script src="vue.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <table class="table table-sm table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">Название</th>
+                    <th scope="col">v2</th>
+                    <th scope="col">v3</th>
+                    <th scope="col">v4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in songs" :key="'song_'+index">
+                    <th scope="row">{{index+1}}</th>
+                    <td><a :href="item[1]" target="_blank" v-if="item[1] && item[0]"><b>{{item[0].substring(0,1)}}</b>{{item[0].substring(1)}}</a></td>
+                    <td><a :href="item[2]" target="_blank" v-if="item[2]">Версия 2</a></td>
+                    <td><a :href="item[3]" target="_blank" v-if="item[3]">Версия 3</a></td>
+                    <td><a :href="item[4]" target="_blank" v-if="item[4]">Версия 4</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
