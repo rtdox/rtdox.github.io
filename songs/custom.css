@@ -1,0 +1,73 @@
+/* FADE ANIMATION */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.5s ease-in-out;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.btn_close {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+.btn_back {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+.youtube {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 3px;
+    background-image: url('youtube.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+td a {
+    white-space: nowrap;
+}
+
+.h_name {
+    white-space: normal;
+}
+
+mark {
+    background: orange;
+    color: black;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #444;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #f00;
+}
+
+tr:hover .h_name {
+    color: #f00;
+}
