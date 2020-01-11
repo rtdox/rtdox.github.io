@@ -71,3 +71,7 @@ a:hover {
 tr:hover .h_name {
     color: #f00;
 }
+
+.pre-format {
+    white-space: pre-wrap;
+}
