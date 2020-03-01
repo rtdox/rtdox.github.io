@@ -104,7 +104,7 @@
     {
         "name":"The Coin Page",
         "description":"Конвертер криптовалют и африканских валют.",
-        "link":"",
+        "link":"https://thecoinpage.com",
         "image":"projects/img/coinpage.jpg",
         "order":0,
         "visible":true,
