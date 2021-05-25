@@ -71,7 +71,7 @@
     {
         "name":"Victor Daysun",
         "description":"Персональный сайт украинского художника Виктора Дейсуна.",
-        "link":"https://art-daysun.inf.ua",
+        "link":"https://viktordeisun.com",
         "image":"projects/img/artdaysun.jpg",
         "order":0,
         "visible":true,
